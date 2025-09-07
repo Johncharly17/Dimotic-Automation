@@ -3,123 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DIMOTIC AUTOMATION</title>
-  <style>
-    /* 🎨 Estilos CSS */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background: #f4f4f9;
-      color: #333;
-    }
-
-    header {
-      background: #0d6efd;
-      color: white;
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #ffc107;
-    }
-
-    section {
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-
-    .btn {
-      background: #0d6efd;
-      color: white;
-      padding: 0.7rem 1.2rem;
-      border: none;
-      cursor: pointer;
-      border-radius: 8px;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: #084298;
-    }
-
-    footer {
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-    }
-  </style>
+  <title>Dimotic Automation</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- 🔝 Encabezado -->
+  <!-- Encabezado -->
   <header>
-    <h1>DIMOTIC AUTOMATION</h1>
-    <nav>
-      <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
+    <h1>Dimotic Automation</h1>
+    <p>Automatización con Inteligencia Artificial</p>
   </header>
 
-  <!-- 🏠 Sección Inicio -->
-  <section id="inicio">
-    <h2>Automatización con Inteligencia Artificial</h2>
-    <p>Hacemos que tu negocio sea más inteligente, rápido y eficiente con soluciones de IA y automatización.</p>
-    <button class="btn" onclick="alert('Gracias por interesarte en DIMOTIC 🚀')">Saber más</button>
+  <!-- Sección principal -->
+  <section class="hero">
+    <h2>Transformamos tu negocio con IA</h2>
+    <p>Desde chatbots inteligentes hasta automatización de procesos, hacemos que la tecnología trabaje para ti.</p>
+    <a href="#contacto" class="btn">Contáctanos</a>
   </section>
 
-  <!-- ⚙️ Sección Servicios -->
-  <section id="servicios">
-    <h2>Servicios</h2>
-    <p>Ofrecemos:</p>
-    <ul style="list-style: none; padding: 0;">
-      <li>🤖 Chatbots con IA</li>
-      <li>📊 Dashboards inteligentes</li>
-      <li>🏠 Domótica e IoT</li>
-    </ul>
+  <!-- Sección servicios -->
+  <section class="servicios">
+    <h2>Nuestros Servicios</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Chatbots con IA</h3>
+        <p>Atiende clientes 24/7 con soluciones conversacionales.</p>
+      </div>
+      <div class="card">
+        <h3>Automatización</h3>
+        <p>Workflows inteligentes para clínicas, barberías y negocios.</p>
+      </div>
+      <div class="card">
+        <h3>Integraciones</h3>
+        <p>Conecta tu web con WhatsApp, Telegram y más.</p>
+      </div>
+    </div>
   </section>
 
-  <!-- 📩 Sección Contacto -->
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p>Escríbenos a: <b>info@dimotic.com</b></p>
+  <!-- Contacto -->
+  <section id="contacto" class="contacto">
+    <h2>Hablemos 🚀</h2>
+    <p>Escríbenos y llevemos tu negocio al siguiente nivel.</p>
+    <a href="mailto:info@dimotic.uk" class="btn">Enviar correo</a>
   </section>
 
-  <!-- 🔚 Footer -->
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 DIMOTIC AUTOMATION - Todos los derechos reservados</p>
+    <p>© 2025 Dimotic Automation | Creado con 💡 + ⚡</p>
   </footer>
-
-  <!-- ⚡ JavaScript -->
-  <script>
-    // Cuando se carga la página, se ejecuta esto
-    console.log("Página de DIMOTIC AUTOMATION cargada 🚀");
-
-    // Ejemplo: mostrar alerta al hacer click en cualquier link de navegación
-    document.querySelectorAll("nav a").forEach(link => {
-      link.addEventListener("click", () => {
-        console.log("Navegaste a " + link.getAttribute("href"));
-      });
-    });
-  </script>
 </body>
 </html>
