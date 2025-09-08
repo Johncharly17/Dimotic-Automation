@@ -113,9 +113,10 @@ async function sendMessage() {
   const data = await res.json();
 
   // Muestra la respuesta del bot
-  const botMsg = document.createElement("div");
-  botMsg.textContent = "🤖 " + data.reply;
-  messages.appendChild(botMsg);
+  // Muestra la respuesta del bot
+const botMsg = document.createElement("div");
+botMsg.textContent = "🤖 " + (data[0]?.output || "Error al recibir respuesta");
+messages.appendChild(botMsg);
 
   input.value = "";
   messages.scrollTop = messages.scrollHeight;
@@ -128,5 +129,6 @@ input.addEventListener("keypress", e => {
 </script>
 
 </html>
+
 
 
