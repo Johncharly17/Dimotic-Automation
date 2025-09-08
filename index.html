@@ -43,5 +43,90 @@
     <p>© 2025 Dimotic Automation | Agente.Rott 🤖</p>
   </footer>
 </body>
+  <div id="chat-widget">
+  <div id="chat-header">💬 Chat con Dimotic Automation</div>
+  <div id="chat-messages"></div>
+  <input id="chat-input" type="text" placeholder="Escribe un mensaje...">
+  <button id="chat-send">Enviar</button>
+</div>
+
+<style>
+#chat-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  background: #111;
+  border: 1px solid #0f62fe;
+  border-radius: 10px;
+  color: white;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+}
+#chat-header {
+  background: #0f62fe;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+#chat-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
+#chat-input {
+  border: none;
+  padding: 10px;
+  flex: 1;
+}
+#chat-send {
+  background: #0f62fe;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+</style>
+
+<script>
+const sendBtn = document.getElementById("chat-send");
+const input = document.getElementById("chat-input");
+const messages = document.getElementById("chat-messages");
+
+async function sendMessage() {
+  const text = input.value.trim();
+  if (!text) return;
+
+  // Muestra el mensaje del usuario
+  const userMsg = document.createElement("div");
+  userMsg.textContent = "👤 " + text;
+  messages.appendChild(userMsg);
+
+  // Enviar al endpoint de n8n
+  const res = await fetch("https://n8npanel.dimotic.uk/webhook/chatbot", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message: text })
+  });
+  const data = await res.json();
+
+  // Muestra la respuesta del bot
+  const botMsg = document.createElement("div");
+  botMsg.textContent = "🤖 " + data.reply;
+  messages.appendChild(botMsg);
+
+  input.value = "";
+  messages.scrollTop = messages.scrollHeight;
+}
+
+sendBtn.addEventListener("click", sendMessage);
+input.addEventListener("keypress", e => {
+  if (e.key === "Enter") sendMessage();
+});
+</script>
+
 </html>
+
 
