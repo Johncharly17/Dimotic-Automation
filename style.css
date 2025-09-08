@@ -6,46 +6,74 @@
 }
 
 body {
-  background-color: #000; /* Fondo negro */
-  color: #fff; /* Texto blanco */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #000;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
   line-height: 1.6;
-  text-align: center;
+  overflow-x: hidden;
 }
 
-/* Encabezado */
-header {
-  padding: 2rem;
-  border-bottom: 1px solid #333;
+/* HERO */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #000 60%, #0f62fe33 100%);
 }
-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+
+.hero-content {
+  max-width: 600px;
+  text-align: left;
+  animation: fadeInLeft 1.5s ease;
 }
-header p {
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #0ff, #0f62fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
   color: #aaa;
 }
 
-/* Hero */
-.hero {
-  padding: 4rem 2rem;
-}
-.hero h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
 .hero .btn {
   display: inline-block;
   margin-top: 1.5rem;
   padding: 0.8rem 1.5rem;
-  background: #0f62fe; /* Azul moderno */
+  background: #0f62fe;
   color: white;
   border-radius: 5px;
   text-decoration: none;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
+
 .hero .btn:hover {
   background: #0353e9;
+  transform: scale(1.05);
+}
+
+/* Imagen del HERO */
+.hero-image img {
+  max-width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px #0f62fe88;
+  animation: fadeInRight 1.5s ease;
+}
+
+/* Animaciones */
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 /* Servicios */
@@ -65,18 +93,11 @@ header p {
   border-radius: 10px;
   width: 280px;
   border: 1px solid #222;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card:hover {
   transform: translateY(-5px);
-}
-
-/* Contacto */
-.contacto {
-  padding: 4rem 2rem;
-}
-.contacto .btn {
-  margin-top: 1rem;
+  box-shadow: 0 0 15px #0f62fe55;
 }
 
 /* Footer */
@@ -84,4 +105,5 @@ footer {
   padding: 2rem;
   border-top: 1px solid #333;
   color: #888;
+  text-align: center;
 }
